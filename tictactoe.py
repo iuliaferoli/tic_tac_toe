@@ -12,8 +12,7 @@ class MyBoard:
         self.game_state = ""
 
     def read_board(self) -> None:
-        game_state = self.game_state
-        self.board = np.array([*game_state]).reshape(3, 3)
+        self.board = np.array([*self.game_state]).reshape(3, 3)
 
     def print_board(self) -> None:
         board = self.board
@@ -24,6 +23,12 @@ class MyBoard:
                 print(board[i, j] + " ", end='')
             print("|")
         print("---------")
+
+    def change_turn(self) -> None:
+        if self.turn == "X":
+            self.turn = "O"
+        elif self.turn == "O":
+            self.turn = "X"
 
 
 def check_input(myBoard: MyBoard, play: str) -> str:
@@ -37,6 +42,7 @@ def check_input(myBoard: MyBoard, play: str) -> str:
         return "This cell is occupied! Choose another one! "
 
     myBoard.board[i][j] = myBoard.turn
+    myBoard.change_turn()
     return "Move made"
 
 
