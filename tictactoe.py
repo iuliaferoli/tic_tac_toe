@@ -7,7 +7,7 @@ class MyBoard:
         self.board = np.array([["_", "_", "_"],
                                ["_", "_", "_"],
                                ["_", "_", "_"]])
-        self.win_state = None
+        self.win_state = "in progress"
         self.turn = "X"
         self.game_state = ""
 
@@ -60,6 +60,13 @@ def check_same(line: np.array) -> bool:
         return False
 
 
+def check_game_state(state: str) -> str:
+    if state == "X wins" or state == "O wins" or state == "Draw":
+        return "finished"
+    else:
+        return "in progress"
+
+
 def win_check(myBoard: MyBoard) -> str:
     current_state = None
     game_state = myBoard.game_state
@@ -92,6 +99,7 @@ def win_check(myBoard: MyBoard) -> str:
         else:
             current_state = "Draw"
 
+    myBoard.win_state = check_game_state(current_state)
     return current_state
 
 
