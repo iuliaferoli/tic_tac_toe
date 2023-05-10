@@ -9,10 +9,13 @@ class MyBoard:
                                ["_", "_", "_"]])
         self.win_state = "in progress"
         self.turn = "X"
-        self.game_state = ""
+        self.game_state = "_________"
 
     def read_board(self) -> None:
         self.board = np.array([*self.game_state]).reshape(3, 3)
+
+    def compute_game_state(self) -> None:
+        self.game_state = "".join(element for element in self.board.reshape(1, 9).tolist()[0])
 
     def print_board(self) -> None:
         board = self.board
@@ -30,6 +33,10 @@ class MyBoard:
         elif self.turn == "O":
             self.turn = "X"
 
+    def make_move(self, i: int, j: int) -> None:
+        self.board[i][j] = self.turn
+        self.compute_game_state()
+
 
 def check_input(myBoard: MyBoard, play: str) -> str:
     if not bool(re.match(r"([0-9] [0-9])", play)):
@@ -41,8 +48,7 @@ def check_input(myBoard: MyBoard, play: str) -> str:
     if cell_not_empty(myBoard.board[i][j]):
         return "This cell is occupied! Choose another one! "
 
-    myBoard.board[i][j] = myBoard.turn
-    myBoard.change_turn()
+    myBoard.make_move(i, j)
     return "Move made"
 
 
