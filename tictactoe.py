@@ -105,22 +105,27 @@ def win_check(myBoard: MyBoard) -> str:
         else:
             current_state = "Draw"
 
-    myBoard.win_state = check_game_state(current_state)
+    myBoard.win_state = current_state
     return current_state
 
 
-game_state = input("Enter game state: ")
-
 myBoard = MyBoard()
-myBoard.game_state = game_state
-myBoard.read_board()
-myBoard.print_board()
+state = "in progress"
+while state == "in progress":
+    myBoard.print_board()
+    response = ''
+    while response != "Move made":
+        play = input("Enter move: ")
+        response = check_input(myBoard, play)
+        if response != "Move made":
+            print(response)
 
-response = ''
-while response != "Move made":
-    play = input("Enter move: ")
-    response = check_input(myBoard, play)
-    if response == "Move made":
-        myBoard.print_board()
-    else:
-        print(response)
+    win_check(myBoard)
+    state = check_game_state(myBoard.win_state)
+    if state == "in progress":
+        myBoard.change_turn()
+
+myBoard.print_board()
+print(myBoard.win_state)
+
+
