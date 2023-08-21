@@ -5,7 +5,7 @@
 The instructions and interactive course for this project can be found on the Hyperskill website [here.](https://hyperskill.org/projects/73?track=6)
 
 This project takes you along through building a very simple, beginner-oriented game in python. 
-Through the different iterative problems, you will go from 0 to command-line game developer in 4 phases.
+Through the different iterative problems, you will go from 0 to command-line game developer in 5 phases.
 The course itseld has a lot of additional features, like tests that must be passed for each phase, with more specific descriptions of expected behavious on each level.
 
 However, that is not to say signing up for the course is necessary to play along and build your own tic-tac-toe game. You can use the descriptions bellow as guidelines and build out your own version.
