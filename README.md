@@ -1,3 +1,5 @@
+[!logo](/Screenshot 2023-08-21 at 14.47.52.png)
+
 # Python tic-tac-toe game project
 
 The instructions and interactive course for this project can be found on the Hyperskill website [here.](https://hyperskill.org/projects/73?track=6)
@@ -35,7 +37,9 @@ Read the current board standing (similar to the string input in the previous sta
 
 Allow players to input the coordinates for a move, execute that move on the board, and display the new state of the game. 
 
-### [Phase 5: It goes on and on and on]()
+### [Phase 5: It goes on and on and on](/tictactoe.py)
 
-Create a game loop that takes the previous steps and builds a working tic-tac-toe game. Keep playing move by move until you have a winner!
+Create a game loop that takes the previous steps and builds a working tic-tac-toe game. 
+
+Keep playing move by move until you have a winner!
 
