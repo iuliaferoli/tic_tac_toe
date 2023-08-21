@@ -1,4 +1,4 @@
-[!logo](/Screenshot 2023-08-21 at 14.47.52.png)
+![logo](https://github.com/iuliaferoli/tic_tac_toe/blob/0ebbb7c9f8a0b0ddef40ea007df92a153d5f413c/Screenshot%202023-08-21%20at%2014.47.52.png)
 
 # Python tic-tac-toe game project
 
@@ -12,7 +12,7 @@ However, that is not to say signing up for the course is necessary to play along
 
 This is by no means the only (or the best) solution to building a tic-tac-toe game! Loads of variations are possible, this is simply an example of a possible interpretation of the game.
 
-### [Phase 1: The board](/tictactoe_probmle1.py)
+### [Phase 1: The board](/tictactoe_problem1.py)
 
 Build code that prints out a tic-tac-toe board such as:
 ```
